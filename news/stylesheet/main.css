@@ -1,0 +1,235 @@
+img,hr,a,h1,h2,ul,li, p,body{
+    font-size: 16;
+    margin:0;
+    padding:0;
+    font-family: 'Open Sans', sans-serif;
+    list-style-type: none;
+    text-decoration: none;
+}
+h2{
+    font-size: 32px;
+}
+
+button{
+    all:unset;
+}
+
+
+
+
+
+/* TOP */
+
+
+.top-menu{
+    margin: 2% 10% 2% 10%;
+}
+
+.top-menu__elements{
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+
+.top-menu__elements--p{
+    color:#841844;
+}
+
+.ban-image{
+
+    width: 100%; /* Ширина блока */
+    height: 646px; /* Высота блока, можно установить любую желаемую высоту */
+    background-size: cover; /* Изображение покроет весь блок */
+    background-position: center; /* Центрирование изображения */
+    background-repeat: no-repeat; /* Изображение не будет повторяться */
+}
+
+.ban-image__text--title {
+    padding: 218.12px 0 30.33px 10%;
+    font-family: 'Open Sans', sans-serif;
+    font-size: 64px;
+    color: white;
+    
+}
+
+.ban-image__text--info{
+    padding: 0 0 0 10%;
+    font-family: 'Open Sans', sans-serif;
+    font-size: 32px;
+    color: white;
+}
+
+
+
+
+
+/* NEWS */
+
+
+.main-info__title--text{
+    margin:50px 0 50px 10%;
+    font-size: 64px;
+}
+
+
+.main-info__block{
+    margin:0 10% 0 10%;
+    display: flex;
+    justify-content: space-between;
+}
+
+.main-info__block--news{
+    margin: 0 0px 82px 0;
+    display: flex;
+    width: 45%;
+    flex-flow: column;
+    justify-content: space-between;
+    transition: background-color 0.3s ease;
+}
+
+.main-info__block--title{
+    margin: 0 0 30px 0;
+    font-size: 32px;
+    color: black;
+}
+
+.main-info__block--news:hover .main-info__block--title{
+    color:#841844;
+}
+
+.main-info__block--date{
+    margin: 0 0 30px 0;
+    width: 118px;
+    height: 34px;
+    border-radius: 20px;
+    background-color: #ECF2F5;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.main-info__block--text{
+    margin: 0 0 30px 0;
+    font-size: 20px;
+}
+
+.main-info__block--button{
+    width: 18%;
+    color: #841844;
+    background-color: white;
+    border: 1px solid #841844;
+    border-radius: 50px;
+    padding: 16px 40px;
+    cursor: pointer;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    transition: background-color 0.3s ease;
+}
+
+.main-info__block--button--text{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    transition: background-color 0.3s ease;
+}
+
+.main-info__block--news:hover .main-info__block--button{
+    color: white;
+    background-color: #841844;
+    border: 1px solid #841844;
+}
+
+#arrow-1{
+    margin: 0 0 0 20px;
+    width: 16px;
+    height: 14px;
+    background-color: #841844;
+    clip-path: polygon(62% 23%, 68% 17%, 100% 48%, 71% 81%, 64% 76%, 85% 53%, 0 53%, 0 44%, 85% 44%);;
+    display: flex;
+    align-items: center;
+}
+
+.main-info__block--news:hover #arrow-1{
+    background-color: white;
+}
+
+
+
+
+
+  /* BOTTOM NAV */
+
+
+.nav__elem{
+    display: flex;
+    justify-content: space-between;
+
+    margin: 0 10% 0 72%;
+}
+
+.nav__elem--button{
+    color: #841844;
+    background-color: white;
+    border: 1px solid #841844;
+    border-radius: 50px;
+    padding: 16px 23px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    transition: background-color 0.3s ease;
+}
+
+.nav__elem--button:hover {
+    color: white;
+    background-color: #841844;
+}
+
+#arrow-2{
+    margin: 0 20px;
+    width: 16px;
+    height: 14px;
+    background-color: #841844;
+    clip-path: polygon(49% 5%, 55% 0, 100% 47%, 55% 100%, 49% 95%, 85% 53%, 0 53%, 0 44%, 85% 44%);
+    /* clip-path: polygon(74% 25%, 80% 20%, 100% 45%, 79% 70%, 74% 65%, 87% 50%, 50% 50%, 0 50%, 0 40%, 87% 40%); */
+    display: flex;
+    align-items: center;
+}
+
+.nav__elem--button:hover #arrow-2{
+    background-color: white;
+}
+
+
+
+
+
+/* FOOTER */
+
+
+.footer__line{
+    margin:3% 10%;
+}
+
+.footer__text{
+    margin: 0 10% 3% 10%;
+}
+
+
+/*      NEWS PHP        */
+
+.news-block{
+        margin: 4% 10% 2% 10%;
+}
+
+.news-block-top__nav{
+    margin: 0 0 2% 0;
+    display: inline-flex;
+}
+
+.news-block-top__nav--p{
+    color:grey;
+}
+.news-block-top__title{
+    margin: 0 0 4% 0;
+}
