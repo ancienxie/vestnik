@@ -1,11 +1,11 @@
 <?php 
-	include "/var/www/workspace/s242/www/harder_version/header.php";
+	include "../header.php";
 
-	$db = new PDO("mysql:host=localhost;dbname=student","root","root");
+	$db = new PDO("mysql:host=localhost;dbname=news","root","root");
 
 	$id = $_GET['id'] ?? 0;
 
-    $sql = "SELECT *, DATE_FORMAT('date','%d.%m.%Y') news_date FROM news WHERE id=?";
+    $sql = "SELECT *, DATE_FORMAT(`date`,'%d.%m.%Y') news_date FROM news WHERE id=?";
 
     $res = $db->prepare($sql);
 
@@ -48,5 +48,5 @@
 	{
 		echo "Новость отсутствует";
 	} 
-	include "/var/www/workspace/s242/www/harder_version/footer.php";
+	include "../footer.php";
 ?>

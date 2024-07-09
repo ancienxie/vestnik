@@ -31,8 +31,10 @@ btn.forEach((el)=>{
 */
 
 
+console.log("text");
 
-document.querySelector('.form1').addEventListener('submit', function(event){
+const form = document.querySelector('.form1');
+form.addEventListener('submit', function(event){
 	
 	event.preventDefault();
 
@@ -40,7 +42,9 @@ document.querySelector('.form1').addEventListener('submit', function(event){
 	const email = document.querySelector('[name="email"]');
 	const message = document.querySelector('[name="message"]');
 
-	let regex = /^(?!\d)[a-zA-Z0-9]+\@[a-zA-Z0-9]+\.(?!\d)[a-zA-Z0-9]{2,}+(\.(?!\d)[a-zA-Z0-9]{2,})*(\.(?!\d)[a-zA-Z0-9]{2,})*$/;
+	const emailRegex = /^([a-zA-Z]|[0-9])([a-zA-Z]|[0-9]|[\.\_\-])+@([a-zA-Z]|[0-9])+\.[a-zA-Z]+/gm;
+
+	clearErrors();
 
 	let errors = [];
 
@@ -50,24 +54,25 @@ document.querySelector('.form1').addEventListener('submit', function(event){
 
 	if (!email.value){
 		errors.push("Поле 'Email' обязательное для заполнения.");
-	} else if(!regex.test(email.value)){
+	} else if(!emailRegex.test(email.value)){
 		errors.push("Поле 'Email' заполнено неверно.");
 	}
 
-	if (!message.value.length > 10){
+	if (message.value.length >= 10){
 		errors.push("Поле для комментария не должно превышать 10 символов.");
 	}
 
 	if(errors.length > 0){
 		showErrors(errors);
 	} else{
-		const form = document.querySelector('.form1');
-		form.remove();
+		document.querySelector('.form1').submit();
+		document.querySelector('.form1').remove();
 
 		const finalText = document.createElement('p');
 		finalText.textContent = "Спасибо за отправку";
 
 		document.body.appendChild(finalText);
+		sendMail(name,email,message);
 	}
 });
 
@@ -81,9 +86,17 @@ function showErrors(errors){
 	})
 };
 
+function sendMail(name, email, message) {
+	fetch("/mail.php", {
+		method: "POST",
+		body: JSON.stringify({name: name, email: email, message: message}),
+	    headers: {
+	        'content-type': 'application/json'
+	    	}
+		});
+}
 
-
-
-
-
-
+function clearErrors() {
+    const errors = document.querySelectorAll('.error');
+    errors.forEach(error => error.remove());
+}

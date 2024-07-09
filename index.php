@@ -1,5 +1,5 @@
 <?php 
-    // include "./vendor/autoload.php";
+    //include "./vendor/autoload.php";
     include "./header.php";
     $db = new PDO("mysql:host=localhost;dbname=news","root","root");
     $sql = "SELECT * FROM news ORDER BY `date` DESC LIMIT 1";
@@ -53,7 +53,7 @@
                 <li class="main-info__block--title"><h2><?=$row['title']?></h2></li>
                 <li class="main-info__block--text"><p><?=strip_tags($row['announce'])?></p></li>
                 <li class="main-info__block--button">
-                    <a href="/harder_version/news.php?id=<?=$row['id']?>" class="main-info__block--button--text">
+                    <a href="./news/news.php?id=<?=$row['id']?>" class="main-info__block--button--text">
                         ПОДРОБНЕЕ<div id="arrow-1"></div>
                     </a>
                 </li>
@@ -72,7 +72,7 @@
         </ul>
     </div>
 
-    <form class = "form1" action="mail.php" method="POST">
+    <form class = "form1" method="POST">
         <div class="errorMessages"></div>
         <label for="name">Имя пользователя</label>
         <input type = "text" name="name">
@@ -80,7 +80,7 @@
         <input type = "text" name="email">
         <label for="message">Сообщение</label>
         <textarea type = "text" name="message" rows="2" cols="10"></textarea>
-        <input type="submit" value="ОТПРАВИТЬ">
+        <input type="submit" class="sender" value="Отправить">
     </form>
 
     <?php 
