@@ -8,25 +8,6 @@
 
     //dump($_SERVER);
 ?>
-
-    <div class="btn">
-        <button>1</button>
-    </div>
-    <div class="btn">
-        <button>2</button>
-    </div>
-    <div class="btn">
-        <button>3</button>
-    </div>
-    <div class="btn">
-        <button>4</button>
-    </div>
-    <div class="btn">
-        <button>5</button>
-    </div>
-
-
-
     <div style="background-image: url(./images/<?=$row['image']?>);" class="ban-image">
         <section   class="ban-image__text">
             <h1 class="ban-image__text--title"><?=$row['title']?></h1>
@@ -53,7 +34,7 @@
                 <li class="main-info__block--title"><h2><?=$row['title']?></h2></li>
                 <li class="main-info__block--text"><p><?=strip_tags($row['announce'])?></p></li>
                 <li class="main-info__block--button">
-                    <a href="./news/news.php?id=<?=$row['id']?>" class="main-info__block--button--text">
+                    <a href="./news.php?id=<?=$row['id']?>" class="main-info__block--button--text">
                         ПОДРОБНЕЕ<div id="arrow-1"></div>
                     </a>
                 </li>
@@ -73,29 +54,35 @@
     </div>
 
     <form class = "form1" method="POST">
-        <div class="errorMessages"></div>
-        <label for="name">Имя пользователя</label>
-        <input type = "text" name="name">
-        <label for="email">Email пользователя</label>
-        <input type = "text" name="email">
-        <label for="message">Сообщение</label>
-        <textarea type = "text" name="message" rows="2" cols="10"></textarea>
-        <input type="submit" class="sender" value="Отправить">
+        <div class="form1--errors">
+            <div class="errorMessages"></div>
+        </div>
+        <div class="form1--content">
+            <div class="form1--content--name">
+                <label for="name">Ваше имя</label>
+                <input type = "text" name="name">
+            </div>
+            <div class="form1--content--email">
+                <label for="email">Ваш email</label>
+                <input type = "text" name="email">
+            </div>
+            <div class="form1--content--message">
+                <label for="message">Сообщение</label>
+                <textarea type = "text" name="message" rows="2" cols="10"></textarea>
+            </div>
+
+            <input type="submit" class="sender" value="Отправить">
+        </div>
     </form>
 
     <?php 
-    $value = "";
-    
     //if(preg_match("/([a-z0-9])(\d+)/", $value)){
     //if(preg_match("/([a-z0-9])\.(ru|org|com)/", $value)){
     //echo preg_replace("/[a-z0-9]+\.(ru|org|com)/","<b>$0<b/>", $value);
         //echo $value;
-    //}
-    
-    
-    ?>
+    //}?>
 
-    <?php echo preg_replace("/^(?!\d)[a-zA-Z0-9]+\@[a-zA-Z0-9]+\.(?!\d)[a-zA-Z0-9]{2,}+(\.(?!\d)[a-zA-Z0-9]{2,})*(\.(?!\d)[a-zA-Z0-9]{2,})*$/","<a href=mailto:metasea333@gmail.com>", "metasea333@gmail.com")?>text</a>
+    <!-- <?php //echo preg_replace("/^(?!\d)[a-zA-Z0-9]+\@[a-zA-Z0-9]+\.(?!\d)[a-zA-Z0-9]{2,}+(\.(?!\d)[a-zA-Z0-9]{2,})*(\.(?!\d)[a-zA-Z0-9]{2,})*$/","<a href=mailto:metasea333@gmail.com>", "metasea333@gmail.com")?>text</a> -->
 
     
 <?php include "./footer.php"?>

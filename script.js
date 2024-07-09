@@ -71,7 +71,9 @@ form.addEventListener('submit', function(event){
 		const finalText = document.createElement('p');
 		finalText.textContent = "Спасибо за отправку";
 
-		document.body.appendChild(finalText);
+		const nav = document.querySelector('.nav');
+
+		nav.appendChild(finalText);
 		sendMail(name,email,message);
 	}
 });
@@ -97,6 +99,6 @@ function sendMail(name, email, message) {
 }
 
 function clearErrors() {
-    const errors = document.querySelectorAll('.error');
-    errors.forEach(error => error.remove());
+    const errorMessages = document.querySelector('.errorMessages');
+    errorMessages.innerHTML = '';
 }

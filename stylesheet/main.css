@@ -14,7 +14,9 @@ button{
     all:unset;
 }
 
-
+textarea{
+    resize: none;
+}
 
 
 
@@ -313,7 +315,7 @@ button{
 /* Применение для Firefox */
 @-moz-document url-prefix() {
     .news-block__button {
-        width: 25%;
+        width: 40%;
     }
 }
 
@@ -348,4 +350,43 @@ button{
 
 .news-block__section:hover #arrow-3{
     background-color: white;
+}
+
+
+/* FORM */
+
+.form1--errors{
+    margin: 2% 10%;
+    display:flex;
+    justify-content: center;
+}
+
+.form1{
+    margin: 0;
+}
+
+.form1--content{
+    margin: 0 10%;
+    display:flex;
+    justify-content: center;
+}
+
+.form1--content{
+    display: flex;
+    flex-direction: column;
+    padding: 0 30%;
+}
+
+.form1--content--name{
+    display: flex;
+    flex-direction: column;
+}
+
+.form1--content--email{
+    display: flex;
+    flex-direction: column;
+}
+.form1--content--message{
+    display: flex;
+    flex-direction: column;
 }

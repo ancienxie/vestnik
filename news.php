@@ -1,5 +1,5 @@
 <?php 
-	include "../header.php";
+	include "./header.php";
 
 	$db = new PDO("mysql:host=localhost;dbname=news","root","root");
 
@@ -20,10 +20,6 @@
 ?>
 
 <body>
-     <div class="top-menu">
-         <img src="./logo.png" alt="Галактический вестник">
-     </div>
-     <hr>
     <div class="news-block">
 
         <ul>
@@ -71,15 +67,6 @@
         </section>
 
     </div>
-        
-
-
-
-
-     <div class="footer">
-         <hr class="footer__line">
-         <p class="footer__text">© 2023 — 2412 «Галактический вестник»</p>
-     </div>
  
  </body>
 
@@ -90,5 +77,5 @@
 	{
 		echo "Новость отсутствует";
 	} 
-	include "../footer.php";
+	include "./footer.php";
 ?>
