@@ -58,20 +58,24 @@
             <div class="errorMessages"></div>
         </div>
         <div class="form1--content">
-            <div class="form1--content--name">
-                <label for="name">Ваше имя</label>
-                <input type = "text" name="name">
-            </div>
-            <div class="form1--content--email">
-                <label for="email">Ваш email</label>
-                <input type = "text" name="email">
-            </div>
-            <div class="form1--content--message">
-                <label for="message">Сообщение</label>
-                <textarea type = "text" name="message" rows="2" cols="10"></textarea>
-            </div>
+            <div id="forma">
+                <div class="form1--content--name">
+                    <label for="name">Ваше имя</label>
+                    <input type = "text" name="name">
+                </div>
 
-            <input type="submit" class="sender" value="Отправить">
+                <div class="form1--content--email">
+                    <label for="email">Ваш email</label>
+                    <input type = "text" name="email">
+                </div>
+
+                <div class="form1--content--message">
+                    <label for="message">Комментарий</label>
+                    <textarea type = "text" name="message" rows="2" cols="10"></textarea>
+                </div>
+
+                <input type="submit" class="sender" value="Отправить">
+            </div>
         </div>
     </form>
 

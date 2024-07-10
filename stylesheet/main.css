@@ -363,18 +363,22 @@ textarea{
 
 .form1{
     margin: 0;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    
 }
 
-.form1--content{
-    margin: 0 10%;
-    display:flex;
-    justify-content: center;
-}
+
 
 .form1--content{
     display: flex;
+    justify-content: center;
     flex-direction: column;
-    padding: 0 30%;
+    margin: 0 30%;
+    padding: 1% 2%;
+    border: 2px solid #841844;
+    border-radius: 50px;    
 }
 
 .form1--content--name{
@@ -389,4 +393,20 @@ textarea{
 .form1--content--message{
     display: flex;
     flex-direction: column;
+}
+
+.success-message {
+    color: #841844;
+    font-size: 20px;
+    font-weight: bold;
+    display: flex;
+    justify-content: center;
+}
+
+.errors-message{
+    background-color: red;
+    padding: 1% 2%;
+    margin: 0 0 0.5% 0;
+    border: 1px solid;
+    border-radius: 5px; 
 }

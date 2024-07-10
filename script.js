@@ -69,7 +69,9 @@ form.addEventListener('submit', function(event){
 		document.querySelector('.form1').remove();
 
 		const finalText = document.createElement('p');
-		finalText.textContent = "Спасибо за отправку";
+		finalText.textContent = "Спасибо за отзыв";
+
+		finalText.classList.add('success-message');
 
 		const nav = document.querySelector('.nav');
 
@@ -84,6 +86,7 @@ function showErrors(errors){
 	errors.forEach(error => {
 		const error_elem = document.createElement('p');
 		error_elem.textContent = error;
+		error_elem.classList.add('errors-message');
 		errorMessages.appendChild(error_elem);
 	})
 };
